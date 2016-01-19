@@ -1,0 +1,31 @@
+{
+	"_id": "2016-01-19T20:33:04.417Z"
+	, "where": "Radisson Hotel, Galway"
+	, "when": "Tue Jan 19 2016 13:00"
+	, "info": "We have 30 properties for sale."
+}
+
+{
+	"_id": "2016-01-19T20:35:30.820Z"
+	, "where": "The G Hotel, Galway"
+	, "when": "Tue Jan 26 2016 14:00"
+	, "info": "We have 40 homes on sale, and 40 commercial properties."
+}
+
+{
+	"_id": "2016-02-19T20:35:30.820Z"
+	, "where": "The G Hotel, Galway"
+	, "when": "Tue Feb 20 2016 12:00"
+	, "info": "We have 80 homes on sale, and 30 commercial properties."
+}
+
+{
+  "_id":"_design/auctions",
+  "language": "javascript",
+  "views":
+  {
+    "bydate": {
+      "map": "function(doc) {emit(doc._id, {when: doc.when, where: doc.where, info: doc.info});};"
+    }
+  }
+}

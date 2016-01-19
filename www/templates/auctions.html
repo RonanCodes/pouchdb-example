@@ -1,0 +1,29 @@
+<ion-view view-title="Auctions"> <!-- cache-view="false"> -->
+  <ion-content>
+    
+    <!-- Only display this if the auctions list is empty. -->
+    <div ng-hide="auctions.length" class="card">
+      <div class="item item-text-wrap item-stable">
+        There are no auctions.
+      </div>
+    </div>
+    
+    <!-- Display a card for every auction. -->
+    <!-- This isn't very pretty but shows the concept. -->
+    <div class="card" ng-repeat="auction in auctions">
+
+      <div class="item item-dark question-title">
+        {{ auction.when }}
+      </div>
+
+      <div class="item item-text-wrap item-stable">
+        <p>{{ auction.where }}</p>
+      </div>
+      
+      <div class="item item-text-wrap">
+        <p>{{ auction.info }}</p>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>
